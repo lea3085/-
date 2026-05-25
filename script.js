@@ -60,6 +60,7 @@ confirmEdit.addEventListener('click', () => {
   if (code === 'אליהו') {
     modal.hidden = true;
     editorPanel.hidden = false;
+    document.body.classList.add('is-editing');
     enableInlineTextEditing();
   } else {
     alert('סיסמה שגויה');
@@ -67,8 +68,7 @@ confirmEdit.addEventListener('click', () => {
 });
 
 function enableInlineTextEditing() {
-  document.querySelectorAll('h1,h2,h3,p,li,a.btn').forEach((el) => {
-    if (el.classList.contains('editor-control')) return;
+  document.querySelectorAll('header h1, header p, main h2, main h3, main p, main li, main a.btn').forEach((el) => {
     el.contentEditable = 'true';
     el.style.outline = '1px dashed transparent';
     el.addEventListener('focus', () => {
@@ -88,19 +88,25 @@ document.getElementById('applyTheme').addEventListener('click', () => {
 });
 
 function disableInlineTextEditing() {
-  document.querySelectorAll('h1,h2,h3,p,li,a.btn').forEach((el) => {
+  document.querySelectorAll('header h1, header p, main h2, main h3, main p, main li, main a.btn').forEach((el) => {
     el.contentEditable = 'false';
     el.style.outlineColor = 'transparent';
   });
 }
 
-closeEdit.addEventListener('click', () => {
+closeEdit.addEventListener('click', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
   disableInlineTextEditing();
   editorPanel.hidden = true;
+  document.body.classList.remove('is-editing');
 });
 
-saveEdit.addEventListener('click', () => {
+saveEdit.addEventListener('click', (event) => {
+  event.preventDefault();
+  event.stopPropagation();
   disableInlineTextEditing();
   editorPanel.hidden = true;
+  document.body.classList.remove('is-editing');
   alert('השינויים נשמרו בדפדפן הפעיל.');
 });
