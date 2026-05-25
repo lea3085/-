@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>תמר אלישיב | צלמת חוץ וניו בורן</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero" id="home">
+      <div class="hero-content container reveal">
+        <p class="brand">תמר אלישיב • מודיעין עילית</p>
+        <h1>צילום ניו בורן וצילומי חוץ בסגנון נקי, יוקרתי וטבעי</h1>
+        <p class="subtitle">רגעים אמיתיים עם עיבוד עדין ואלגנטי שנשאר לכל החיים.</p>
+        <div class="hero-actions">
+          <a href="#gallery" class="btn primary">לגלריה עכשיו</a>
+          <a href="#pricing" class="btn ghost">לחבילות ומחירים</a>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <section class="quick-choice container reveal" aria-label="בחירת מסלול מהירה">
+        <h2>בחרי מסלול לפי סגנון</h2>
+        <div class="choice-grid">
+          <a href="#newborn" class="choice-card floating-card">
+            <span class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 3a4 4 0 0 1 4 4v1.2a6 6 0 1 1-8 0V7a4 4 0 0 1 4-4Zm0 8a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 0-9Z"/></svg>
+            </span>
+            <h3>ניו בורן</h3>
+            <p>תאורה רכה, קומפוזיציות עדינות ואווירה רגועה.</p>
+          </a>
+          <a href="#outdoor" class="choice-card floating-card delay">
+            <span class="icon-wrap" aria-hidden="true">
+              <svg viewBox="0 0 24 24" class="icon-svg"><path d="M12 2 3 7v6c0 5 3.8 8.8 9 9 5.2-.2 9-4 9-9V7l-9-5Zm0 3.1 6 3.3V13c0 3.4-2.5 6.2-6 6.6-3.5-.4-6-3.2-6-6.6V8.4l6-3.3Zm-1 4v5l4 2 .8-1.6-2.8-1.4V9h-2Z"/></svg>
+            </span>
+            <h3>חוץ</h3>
+            <p>אור טבעי, תנועה חופשית ותמונות מלאות חיים.</p>
+          </a>
+        </div>
+      </section>
+
+      <section id="gallery" class="section container">
+        <div class="section-heading reveal">
+          <h2>גלריה</h2>
+          <p>הגישה המהירה ביותר לעבודות – ממש בגלילה קצרה מהכניסה.</p>
+        </div>
+
+        <div class="gallery-tabs reveal" role="tablist" aria-label="קטגוריות גלריה">
+          <button class="tab active" role="tab" aria-selected="true" data-target="newborn">ניו בורן</button>
+          <button class="tab" role="tab" aria-selected="false" data-target="outdoor">חוץ</button>
+        </div>
+
+        <div id="newborn" class="gallery-panel active" role="tabpanel">
+          <div class="gallery-grid">
+            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1546015720-b8b30df5aa27?auto=format&fit=crop&w=900&q=80" alt="תינוק בצילום ניו בורן" loading="lazy"/></figure>
+            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=80" alt="צילום תינוק בשמיכה" loading="lazy"/></figure>
+            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1604917869287-3ae73c77e227?auto=format&fit=crop&w=900&q=80" alt="ידיים של תינוק" loading="lazy"/></figure>
+            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1614436163996-25cee5f54290?auto=format&fit=crop&w=900&q=80" alt="תינוק ישן בסלסילה" loading="lazy"/></figure>
+          </div>
+        </div>
+
+        <div id="outdoor" class="gallery-panel" role="tabpanel" hidden>
+          <div class="gallery-grid">
+            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80" alt="ילדה בשדה בצילום חוץ" loading="lazy"/></figure>
+            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="זוג בהיריון בטבע" loading="lazy"/></figure>
+            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="פורטרט חוץ באור ערב" loading="lazy"/></figure>
+            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80" alt="משפחה בצילום חוץ" loading="lazy"/></figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="pricing" class="section pricing container">
+        <div class="section-heading reveal">
+          <h2>מחירון חבילות</h2>
+          <p>מסלולים נפרדים לחלוטין עם תכולה ייעודית לכל קהל יעד.</p>
+        </div>
+        <div class="pricing-grid">
+          <article class="price-card reveal"><h3>חבילת ניו בורן</h3><ul><li>עד שעתיים צילום</li><li>25 תמונות ערוכות</li><li>2 סטים ואביזרים</li></ul><p class="price">₪1,450</p></article>
+          <article class="price-card highlight reveal"><span class="badge">מומלץ</span><h3>חבילת חוץ</h3><ul><li>עד 75 דקות בלוקיישן</li><li>40 תמונות ערוכות</li><li>הכוונה מלאה</li></ul><p class="price">₪1,250</p></article>
+        </div>
+      </section>
+    </main>
+
+    <button id="editToggle" class="edit-toggle" aria-label="כניסה לניהול" title="ניהול">⚙</button>
+
+    <div id="codeModal" class="modal" hidden>
+      <div class="modal-content">
+        <h3>כניסה לפאנל ניהול</h3>
+        <p>הכניסי סיסמה:</p>
+        <input id="editCodeInput" type="password" placeholder="סיסמה" />
+        <div class="modal-actions">
+          <button id="cancelEdit" class="btn ghost">ביטול</button>
+          <button id="confirmEdit" class="btn primary">כניסה</button>
+        </div>
+      </div>
+    </div>
+
+    <aside id="editorPanel" class="editor-panel" hidden>
+      <h3>מצב עריכה פעיל</h3>
+      <p>ניתן ללחוץ על טקסטים ולערוך במקום.</p>
+      <label>צבע ראשי <input type="color" id="primaryColor" value="#4f3a33" /></label>
+      <label>צבע רקע <input type="color" id="bgColor" value="#f9f5f0" /></label>
+      <label>צבע הדגשה <input type="color" id="accentColor" value="#9fd8d0" /></label>
+      <button id="applyTheme" class="btn primary">החלת צבעים</button>
+    </aside>
+
+    <script src="script.js"></script>
+  </body>
+</html>
