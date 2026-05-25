@@ -46,6 +46,7 @@ h1 { font-size: clamp(2rem, 4vw, 3.3rem); line-height: 1.15; margin: .4rem 0; }
 .modal { position: fixed; inset: 0; display: grid; place-items: center; background: rgba(0,0,0,.35); z-index: 40; }
 .modal-content { width: min(90vw, 360px); background: #fff; border-radius: 14px; padding: 20px; box-shadow: var(--shadow); }
 .modal-actions { display: flex; gap: 8px; margin-top: 14px; }
+.editor-actions { display: grid; gap: 8px; margin-top: 10px; }
 .editor-panel { position: fixed; top: 0; left: 0; width: 290px; height: 100vh; padding: 18px; background: #fff; box-shadow: var(--shadow); display: grid; gap: 10px; align-content: start; z-index: 30; }
 .reveal { opacity: 0; transform: translateY(14px); transition: all .65s ease; }
 .reveal.visible { opacity: 1; transform: none; }

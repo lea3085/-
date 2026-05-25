@@ -44,6 +44,8 @@ const modal = document.getElementById('codeModal');
 const confirmEdit = document.getElementById('confirmEdit');
 const cancelEdit = document.getElementById('cancelEdit');
 const editorPanel = document.getElementById('editorPanel');
+const closeEdit = document.getElementById('closeEdit');
+const saveEdit = document.getElementById('saveEdit');
 
 editToggle.addEventListener('click', () => {
   modal.hidden = false;
@@ -66,6 +68,7 @@ confirmEdit.addEventListener('click', () => {
 
 function enableInlineTextEditing() {
   document.querySelectorAll('h1,h2,h3,p,li,a.btn').forEach((el) => {
+    if (el.classList.contains('editor-control')) return;
     el.contentEditable = 'true';
     el.style.outline = '1px dashed transparent';
     el.addEventListener('focus', () => {
@@ -82,4 +85,22 @@ document.getElementById('applyTheme').addEventListener('click', () => {
   root.style.setProperty('--primary', document.getElementById('primaryColor').value);
   root.style.setProperty('--bg', document.getElementById('bgColor').value);
   root.style.setProperty('--accent', document.getElementById('accentColor').value);
+});
+
+function disableInlineTextEditing() {
+  document.querySelectorAll('h1,h2,h3,p,li,a.btn').forEach((el) => {
+    el.contentEditable = 'false';
+    el.style.outlineColor = 'transparent';
+  });
+}
+
+closeEdit.addEventListener('click', () => {
+  disableInlineTextEditing();
+  editorPanel.hidden = true;
+});
+
+saveEdit.addEventListener('click', () => {
+  disableInlineTextEditing();
+  editorPanel.hidden = true;
+  alert('השינויים נשמרו בדפדפן הפעיל.');
 });
