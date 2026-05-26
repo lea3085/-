@@ -3,134 +3,58 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>תמר אלישיב | צלמת חוץ וניו בורן</title>
+    <title>ONE STYLE | רגעים אמיתיים</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;800&family=Playfair+Display:wght@500;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero" id="home">
-      <div class="overlay"></div>
-      <div class="hero-content container reveal">
-        <p class="brand">תמר אלישיב • מודיעין עילית</p>
-        <h1>צילום ניו בורן וצילומי חוץ בסגנון טבעי ונקי</h1>
-        <p class="subtitle">
-          רגעים אמיתיים, צבעים רכים, ותמונות שנשארות בלב לשנים.
-        </p>
-        <div class="hero-actions">
-          <a href="#gallery" class="btn primary">כניסה מהירה לגלריה</a>
-          <a href="#pricing" class="btn secondary">צפייה בחבילות</a>
-        </div>
-      </div>
+    <header class="hero reveal">
+      <p class="topline">גלריה קצה עלי | מחירן השאר פרטים</p>
+      <h1 class="brand">ONE STYLE</h1>
+      <p class="slogan">רגעים אמיתיים. בסטייל אחיד.</p>
     </header>
 
-    <main>
-      <section class="quick-choice container reveal" aria-label="בחירת מסלול מהירה">
-        <h2>לבחירה מהירה לפי סגנון צילום</h2>
-        <div class="choice-grid">
-          <a href="#newborn" class="choice-card">
-            <span class="icon">👶</span>
-            <h3>ניו בורן</h3>
-            <p>סטייל עדין ורך לימים הראשונים והמרגשים.</p>
-          </a>
-          <a href="#outdoor" class="choice-card">
-            <span class="icon">🌿</span>
-            <h3>חוץ</h3>
-            <p>אור טבעי, תנועה חופשית ופריימים מלאי חיים.</p>
-          </a>
-        </div>
+    <main class="wrapper">
+      <section class="quick-grid reveal" aria-label="בחירה מהירה">
+        <a class="card large" href="#gallery">לוגו</a>
+        <a class="card large" href="#onestyle">קצת עלי</a>
+        <a class="card half" href="#outdoor">חוץ</a>
+        <a class="card half" href="#newborn">ניו בורן</a>
+        <a class="card full" href="#pricing">מחירון</a>
       </section>
 
-      <section id="gallery" class="section container">
-        <div class="section-heading reveal">
-          <h2>גלריה</h2>
-          <p>בחרי קטגוריה וצפי בעבודות לדוגמה.</p>
-        </div>
+      <section id="onestyle" class="content-block reveal">
+        <h2>הכירו את ONE STYLE</h2>
+        <p>סגנון צילום חדש שנולד מתוך הרצון ליצור חוויית צילום אחרת. רגועה יותר, מדויקת יותר, אמיתית יותר.</p>
+        <p>במקום לרוץ בין לוקיישנים, החלפות וסטים, ONE STYLE מתמקד במה שבאמת הופך תמונה לבלתי נשכחת — הרגעים עצמם: המבטים בין האחים, החיבוקים, הצחוק של הילדים, ההליכה יחד והחיבור המשפחתי האמיתי.</p>
+        <p>כל הפקת ONE STYLE נבנית בקונספט אחיד של צבעוניות, סטייל ואווירה, עם לוקיישן שנבחר בקפידה כדי ליצור סדרת תמונות הרמונית, נקייה ועל־זמנית שנראית כמו סיפור אחד שלם.</p>
+        <p>במקום לעבור בלי סוף בין סטים ולחפש עוד ועוד רקעים, אנחנו עוצרים, נושמים ונותנים מקום למשפחה עצמה להיות במרכז. כך אפשר להשקיע באמת בהעמדות, בתנועה, בקומפוזיציות וברגעים הקטנים שהופכים אלבום למלא רגש ונוכחות.</p>
+        <p>התוצאה היא אלבום שתופס את כל הרגעים היפים באמת — בקו אחיד, בגוונים תואמים ובאסתטיקה יוקרתית שמרגישה נקייה, רגועה ומדויקת בכל תמונה.</p>
 
-        <div class="gallery-tabs reveal" role="tablist" aria-label="קטגוריות גלריה">
-          <button class="tab active" role="tab" aria-selected="true" data-target="newborn">
-            ניו בורן
-          </button>
-          <button class="tab" role="tab" aria-selected="false" data-target="outdoor">
-            חוץ
-          </button>
-        </div>
+        <ul class="palette-list">
+          <li>ים המלח בגווני אפרסק.</li>
+          <li>כרמים בלבן ושמנת.</li>
+          <li>חוף ים בקו אוורירי תכלכל.</li>
+          <li>יער טבעי בגוונים סגולים.</li>
+        </ul>
 
-        <div id="newborn" class="gallery-panel active" role="tabpanel">
-          <div class="gallery-grid">
-            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1546015720-b8b30df5aa27?auto=format&fit=crop&w=900&q=80" alt="תינוק בצילום ניו בורן" loading="lazy"/></figure>
-            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=900&q=80" alt="צילום תינוק בשמיכה" loading="lazy"/></figure>
-            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1604917869287-3ae73c77e227?auto=format&fit=crop&w=900&q=80" alt="ידיים של תינוק" loading="lazy"/></figure>
-            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1614436163996-25cee5f54290?auto=format&fit=crop&w=900&q=80" alt="תינוק ישן בסלסילה" loading="lazy"/></figure>
-          </div>
-        </div>
-
-        <div id="outdoor" class="gallery-panel" role="tabpanel" hidden>
-          <div class="gallery-grid">
-            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=900&q=80" alt="ילדה בשדה בצילום חוץ" loading="lazy"/></figure>
-            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=900&q=80" alt="זוג בהיריון בטבע" loading="lazy"/></figure>
-            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="פורטרט חוץ באור ערב" loading="lazy"/></figure>
-            <figure class="gallery-item"><img src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=900&q=80" alt="משפחה בצילום חוץ" loading="lazy"/></figure>
-          </div>
-        </div>
+        <p>כל קולקציה נבנתה כדי ליצור חוויה שלמה עם שפה אמנותית ברורה ותוצאה שנשארת יפה ומרגשת גם שנים קדימה.</p>
+        <p class="cta-text">תבחרו גוון שאתם אוהבים, לוקיישן שפותח לכם את הלב — ובואו איתי ללכוד את הרגעים הכי יפים שלכם ולעצב אותם לאומנות שלא תשכח.</p>
       </section>
 
-      <section id="pricing" class="section pricing container">
-        <div class="section-heading reveal">
-          <h2>מחירון חבילות</h2>
-          <p>מסלולים שונים לקהל יעד שונה — עם תוכן מותאם לכל קטגוריה.</p>
-        </div>
-        <div class="pricing-grid">
-          <article class="price-card reveal">
-            <h3>חבילת ניו בורן</h3>
-            <ul>
-              <li>עד שעתיים צילום בסטודיו/בית</li>
-              <li>25 תמונות ערוכות ברזולוציה מלאה</li>
-              <li>2 סטים + אביזרים</li>
-            </ul>
-            <p class="price">₪1,450</p>
-          </article>
-          <article class="price-card highlight reveal">
-            <span class="badge">מומלץ</span>
-            <h3>חבילת חוץ משפחתית</h3>
-            <ul>
-              <li>עד 75 דקות צילום בלוקיישן</li>
-              <li>40 תמונות ערוכות</li>
-              <li>הכוונה מלאה לפוזות טבעיות</li>
-            </ul>
-            <p class="price">₪1,250</p>
-          </article>
+      <section id="gallery" class="content-block reveal">
+        <h2>גלריה</h2>
+        <div class="icon-row">
+          <article><i data-lucide="camera"></i><span>דיוק</span></article>
+          <article><i data-lucide="sparkles"></i><span>סטייל</span></article>
+          <article><i data-lucide="heart-handshake"></i><span>חיבור</span></article>
         </div>
       </section>
     </main>
 
-    <button id="editToggle" class="edit-toggle" aria-label="פתיחת מצב עריכה">⋮</button>
-
-    <div id="codeModal" class="modal" hidden>
-      <div class="modal-content">
-        <h3>כניסה למצב עריכה</h3>
-        <p>הכניסי קוד גישה:</p>
-        <input id="editCodeInput" type="password" placeholder="קוד" />
-        <div class="modal-actions">
-          <button id="cancelEdit" class="btn secondary">ביטול</button>
-          <button id="confirmEdit" class="btn primary">כניסה</button>
-        </div>
-      </div>
-    </div>
-
-    <aside id="editorPanel" class="editor-panel" hidden>
-      <h3>מצב עריכה פעיל</h3>
-      <p>לחצי על טקסט בעמוד כדי לערוך אותו.</p>
-      <label>צבע ראשי <input type="color" id="primaryColor" value="#5d4037" /></label>
-      <label>רקע אתר <input type="color" id="bgColor" value="#fffaf4" /></label>
-      <label>צבע הדגשה <input type="color" id="accentColor" value="#9ad9d2" /></label>
-      <button id="applyTheme" class="btn primary">החל צבעים</button>
-    </aside>
-
+    <script src="https://unpkg.com/lucide@latest"></script>
     <script src="script.js"></script>
   </body>
 </html>
