@@ -10,47 +10,60 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header class="hero reveal">
-      <p class="topline">גלריה קצה עלי | מחירן השאר פרטים</p>
-      <h1 class="brand">ONE STYLE</h1>
-      <p class="slogan">רגעים אמיתיים. בסטייל אחיד.</p>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="logo" href="#home">ONE STYLE</a>
+        <nav>
+          <a href="#about">הקונספט</a>
+          <a href="#collections">קולקציות</a>
+          <a href="#process">התהליך</a>
+          <a href="#contact">יצירת קשר</a>
+        </nav>
+      </div>
     </header>
 
-    <main class="wrapper">
-      <section class="quick-grid reveal" aria-label="בחירה מהירה">
-        <a class="card large" href="#gallery">לוגו</a>
-        <a class="card large" href="#onestyle">קצת עלי</a>
-        <a class="card half" href="#outdoor">חוץ</a>
-        <a class="card half" href="#newborn">ניו בורן</a>
-        <a class="card full" href="#pricing">מחירון</a>
-      </section>
+    <section id="home" class="hero container reveal">
+      <p class="eyebrow">צילום משפחה • ניו בורן • חוץ</p>
+      <h1>רגעים אמיתיים.<br />בסטייל אחיד.</h1>
+      <p class="lead">חוויה צילומית יוקרתית, רגועה ומדויקת — עם שפה אמנותית עקבית שמייצרת אלבום שנראה כמו סיפור שלם.</p>
+      <div class="hero-actions">
+        <a href="#contact" class="btn primary">השארת פרטים</a>
+        <a href="#collections" class="btn ghost">צפייה בקולקציות</a>
+      </div>
+    </section>
 
-      <section id="onestyle" class="content-block reveal">
+    <main class="container">
+      <section id="about" class="content-block reveal">
         <h2>הכירו את ONE STYLE</h2>
-        <p>סגנון צילום חדש שנולד מתוך הרצון ליצור חוויית צילום אחרת. רגועה יותר, מדויקת יותר, אמיתית יותר.</p>
-        <p>במקום לרוץ בין לוקיישנים, החלפות וסטים, ONE STYLE מתמקד במה שבאמת הופך תמונה לבלתי נשכחת — הרגעים עצמם: המבטים בין האחים, החיבוקים, הצחוק של הילדים, ההליכה יחד והחיבור המשפחתי האמיתי.</p>
+        <p>סגנון צילום חדש שנולד מתוך הרצון ליצור חוויית צילום אחרת. רגועה יותר. מדויקת יותר. אמיתית יותר.</p>
+        <p>במקום לרוץ בין לוקיישנים, החלפות וסטים, ONE STYLE מתמקד במה שבאמת הופך תמונה לבלתי נשכחת — הרגעים עצמם. המבטים בין האחים, החיבוקים, הצחוק של הילדים, ההליכה יחד, הקרבה הטבעית והחיבור המשפחתי האמיתי.</p>
         <p>כל הפקת ONE STYLE נבנית בקונספט אחיד של צבעוניות, סטייל ואווירה, עם לוקיישן שנבחר בקפידה כדי ליצור סדרת תמונות הרמונית, נקייה ועל־זמנית שנראית כמו סיפור אחד שלם.</p>
         <p>במקום לעבור בלי סוף בין סטים ולחפש עוד ועוד רקעים, אנחנו עוצרים, נושמים ונותנים מקום למשפחה עצמה להיות במרכז. כך אפשר להשקיע באמת בהעמדות, בתנועה, בקומפוזיציות וברגעים הקטנים שהופכים אלבום למלא רגש ונוכחות.</p>
-        <p>התוצאה היא אלבום שתופס את כל הרגעים היפים באמת — בקו אחיד, בגוונים תואמים ובאסתטיקה יוקרתית שמרגישה נקייה, רגועה ומדויקת בכל תמונה.</p>
-
-        <ul class="palette-list">
-          <li>ים המלח בגווני אפרסק.</li>
-          <li>כרמים בלבן ושמנת.</li>
-          <li>חוף ים בקו אוורירי תכלכל.</li>
-          <li>יער טבעי בגוונים סגולים.</li>
-        </ul>
-
-        <p>כל קולקציה נבנתה כדי ליצור חוויה שלמה עם שפה אמנותית ברורה ותוצאה שנשארת יפה ומרגשת גם שנים קדימה.</p>
-        <p class="cta-text">תבחרו גוון שאתם אוהבים, לוקיישן שפותח לכם את הלב — ובואו איתי ללכוד את הרגעים הכי יפים שלכם ולעצב אותם לאומנות שלא תשכח.</p>
       </section>
 
-      <section id="gallery" class="content-block reveal">
-        <h2>גלריה</h2>
-        <div class="icon-row">
-          <article><i data-lucide="camera"></i><span>דיוק</span></article>
-          <article><i data-lucide="sparkles"></i><span>סטייל</span></article>
-          <article><i data-lucide="heart-handshake"></i><span>חיבור</span></article>
+      <section id="collections" class="reveal">
+        <div class="section-title"><h2>קולקציות ONE STYLE</h2></div>
+        <div class="collection-grid">
+          <article class="collection-card"><h3>ים המלח</h3><p>גווני אפרסק רכים ומדבר שקט.</p></article>
+          <article class="collection-card"><h3>כרמים</h3><p>לבן ושמנת לאווירה נקייה ועל־זמנית.</p></article>
+          <article class="collection-card"><h3>חוף ים</h3><p>קו אוורירי תכלכל עם תנועה טבעית.</p></article>
+          <article class="collection-card"><h3>יער טבעי</h3><p>גוונים סגלגלים עם עומק רומנטי.</p></article>
         </div>
+      </section>
+
+      <section id="process" class="content-block reveal">
+        <h2>איך זה עובד</h2>
+        <div class="icon-row">
+          <article><i data-lucide="swatch-book"></i><h4>בחירת גוון</h4><p>בוחרים שפה צבעונית שמרגישה בדיוק אתם.</p></article>
+          <article><i data-lucide="map-pinned"></i><h4>בחירת לוקיישן</h4><p>לוקיישן אחד מוקפד שמאפשר רצף ויזואלי מושלם.</p></article>
+          <article><i data-lucide="camera"></i><h4>יום צילום</h4><p>העמדות טבעיות, תנועה רכה ורגעים אמיתיים.</p></article>
+        </div>
+      </section>
+
+      <section id="contact" class="contact reveal">
+        <h2>תבחרו גוון שאתם אוהבים, לוקיישן שפותח לכם את הלב</h2>
+        <p>ובואו איתי ללכוד את הרגעים הכי יפים שלכם ולעצב אותם לאומנות שלא תשכח.</p>
+        <a class="btn primary" href="tel:+972000000000">לתיאום שיחה</a>
       </section>
     </main>
 
