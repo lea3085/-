@@ -229,10 +229,10 @@
           width: 100%;
           height: 100%;
           object-fit: cover;
-          filter: saturate(45%) hue-rotate(115deg) brightness(0.9);
+          filter: grayscale(100%) sepia(22%) hue-rotate(95deg) saturate(170%) brightness(0.92) contrast(0.95);
           transition: all 500ms cubic-bezier(.76,.16,.33,.99);
         }
-        .gallery-container .box:hover .content img { filter: saturate(100%) hue-rotate(0deg) brightness(1); }
+        .gallery-container .box:hover .content img { filter: grayscale(0%) sepia(0%) hue-rotate(0deg) saturate(100%) brightness(1); }
         .gallery-container .box .content::after {
           content: "";
           background: transparent;
@@ -330,7 +330,7 @@
 <body class="overflow-x-hidden antialiased">
 
     <!-- סרגל ניווט עליון -->
-    <nav class="sticky top-0 z-50 bg-cream-100/90 backdrop-blur-md border-b border-mocha-100/80 py-0.5 px-3 md:px-6 transition-all duration-300">
+    <nav class="sticky top-0 z-50 bg-cream-100/90 backdrop-blur-md border-b border-mocha-100/80 py-0.5 px-3 md:py-0 md:px-4 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- לוגו האתר -->
             <a href="#" class="flex items-center gap-3 group">
