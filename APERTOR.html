@@ -1,128 +1,96 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>Animated Loader</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>APERTOR</title>
   <style>
-    * {
-      box-sizing: border-box;
-      -webkit-box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    :root {
+      --mocha-100: #F5EBE6;
+      --mocha-600: #8E6955;
+      --accent-rose: #E1B2B6;
+      --open-progress: 0;
     }
-    h1, h3 {
-      width: 100%;
-      text-align: center;
-      color: #00a2d8;
-      font-family: sans-serif;
-      margin-top: 10px;
+
+    * { box-sizing: border-box; margin: 0; }
+    body {
+      min-height: 200vh;
+      display: grid;
+      place-items: start center;
+      background: linear-gradient(180deg, #FDFBF9 0%, var(--mocha-100) 100%);
+      padding-top: 14vh;
     }
-    #wrapper {
-      width: 200px;
-      height: 200px;
-      position: relative;
-      margin: 40px auto;
+
+    .aperture-wrap {
+      width: 220px;
+      height: 220px;
+      border: 1px solid rgba(142, 105, 85, 0.25);
+      border-radius: 9999px;
+      display: grid;
+      place-items: center;
+      background: rgba(255,255,255,0.55);
+      box-shadow: 0 16px 30px rgba(61, 42, 33, 0.08);
+      backdrop-filter: blur(2px);
     }
-    svg {
-      width: 200px;
-      height: 200px;
-      position: absolute;
-      top: -12px;
-      left: -14px;
+
+    .aperture-logo {
+      width: 150px;
+      height: 150px;
+      color: var(--accent-rose);
     }
-    #aperture {
-      width: 180px;
-      height: 180px;
-      position: absolute;
-      top: 0;
-      left: 0;
-      border-radius: 100px;
-      overflow: hidden;
-      border: 4px solid #abcf37;
+
+    .aperture-logo path,
+    .aperture-logo circle {
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
-    #innerloader {
-      width: 100px;
-      height: 20px;
-      position: absolute;
-      top: 50%;
-      left: 50%;
+
+    .aperture-logo path {
+      stroke-width: 2;
+      transform-box: fill-box;
       transform-origin: 50% 50%;
-      -webkit-transform-origin: 50% 50%;
-      transform: translate(-50%,-50%);
-      -webkit-transform: translate(-50%,-50%);
-      text-align: center;
-      color: #abcf37;
-      font-size: 20px;
-      font-family: sans-serif;
+      transform: rotate(calc(var(--blade-angle, 0deg) * var(--open-progress)));
+      transition: transform .35s cubic-bezier(0.22, 1, 0.36, 1);
     }
-    #bladeOne {
-      transform-origin: 210.02px 43.57px;
-      -webkit-transform-origin: 210.02px 43.57px;
-    }
-    #bladeTwo {
-      transform-origin: 150.47px -14.15px;
-      -webkit-transform-origin: 150.47px -14.15px;
-    }
-    #bladeThree {
-      transform-origin: 67.1px -19.55px;
-      -webkit-transform-origin: 67.1px -19.55px;
-    }
-    #bladeFour {
-      transform-origin: -0.23px 29.9px;
-      -webkit-transform-origin: -0.23px 29.9px;
-    }
-    #bladeFive {
-      transform-origin: -20.02px 111.07px;
-      -webkit-transform-origin: -20.02px 111.07px;
-    }
-    #bladeSix {
-      transform-origin: 16.99px 185.96px;
-      -webkit-transform-origin: 16.99px 185.96px;
-    }
-    #bladeSeven {
-      transform-origin: 93.48px 219.55px;
-      -webkit-transform-origin: 93.48px 219.55px;
-    }
-    #bladeEight {
-      transform-origin: 173.66px 196.11px;
-      -webkit-transform-origin: 173.66px 196.11px;
-    }
-    #bladeNine {
-      transform-origin: 220.02px 126.61px;
-      -webkit-transform-origin: 220.02px 126.61px;
-    }
-    svg path {
-      animation: open 4s linear infinite;
-      -webkit-animation: open 4s linear infinite;
-    }
-    @keyframes open {
-      0% {transform: rotate(-20deg);}
-      20% {transform: rotate(-20deg);}
-      30% {transform: rotate(15deg);}
-      70% {transform: rotate(15deg);}
-      80% {transform: rotate(-20deg);}
-      100% {transform: rotate(-20deg);}
-    }
-    @-webkit-keyframes open {
-      0% {-webkit-transform: rotate(-20deg);}
-      20% {-webkit-transform: rotate(-20deg);}
-      30% {-webkit-transform: rotate(15deg);}
-      70% {-webkit-transform: rotate(15deg);}
-      80% {-webkit-transform: rotate(-20deg);}
-      100% {-webkit-transform: rotate(-20deg);}
-    }
+
+    .aperture-logo circle { stroke-width: 1.6; }
+    .aperture-logo path:nth-of-type(1) { --blade-angle: -16deg; }
+    .aperture-logo path:nth-of-type(2) { --blade-angle: -12deg; }
+    .aperture-logo path:nth-of-type(3) { --blade-angle: -8deg; }
+    .aperture-logo path:nth-of-type(4) { --blade-angle: -4deg; }
+    .aperture-logo path:nth-of-type(5) { --blade-angle: 4deg; }
+    .aperture-logo path:nth-of-type(6) { --blade-angle: 8deg; }
+    .aperture-logo path:nth-of-type(7) { --blade-angle: 12deg; }
+    .aperture-logo path:nth-of-type(8) { --blade-angle: 16deg; }
   </style>
 </head>
 <body>
+  <div class="aperture-wrap" aria-label="סמל צמצם">
+    <svg class="aperture-logo" viewBox="0 0 64 64" aria-hidden="true">
+      <path d="M32 8 L45 16 L37 27 L24 27 Z"></path>
+      <path d="M45 16 L56 30 L43 36 L37 27 Z"></path>
+      <path d="M56 30 L52 47 L38 45 L43 36 Z"></path>
+      <path d="M52 47 L36 57 L29 44 L38 45 Z"></path>
+      <path d="M36 57 L18 53 L21 39 L29 44 Z"></path>
+      <path d="M18 53 L8 38 L20 31 L21 39 Z"></path>
+      <path d="M8 38 L10 21 L24 23 L20 31 Z"></path>
+      <path d="M10 21 L23 9 L31 20 L24 23 Z"></path>
+      <circle cx="32" cy="32" r="10"></circle>
+    </svg>
+  </div>
 
-  <h1>Cool Little Loader</h1>
-  <h3>done in svg and CSS</h3>
-
-  <div id="wrapper">
-    <div id="aperture">
-      <div id="innerloader">Loading ...</div>
-      <svg version="1.1" id="loader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-           width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
-        <path id="bladeOne" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M107.033-25.482c7.357-2.104,68.443,10.182,103.83,69.055 C140.083,27.43,74.477,57.36,48.427,85.156C42.474,57.738,72.809-15.694,107.033-25.482z"/>
-        <path id="bladeTwo" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M26.545-0.31c4.283-6.339,58.974-36.194,123.926-13.841 C85.873,18.98,54.855,84.081,52.767,122.117C30.582,104.939,6.619,29.188,26.545-0.31z"/>
-        <path id="bladeThree" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M-18.933,70.712c-0.794-7.609,21.912-65.635,86.036-90.261 C38.915,47.354,57,117.161,79.848,147.64C51.813
+  <script>
+    const logo = document.querySelector('.aperture-logo');
+    const update = () => {
+      const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+      const progress = Math.min(1, window.scrollY / Math.min(maxScroll, window.innerHeight * 1.2));
+      logo.style.setProperty('--open-progress', progress.toFixed(3));
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+  </script>
+</body>
+</html>

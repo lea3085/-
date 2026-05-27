@@ -126,9 +126,26 @@
         .draw-svg-icon.in-view path, .draw-svg-icon.in-view circle, .draw-svg-icon.in-view line, .draw-svg-icon.in-view polyline, .draw-svg-icon.in-view rect {
             stroke-dashoffset: 0;
         }
-        .aperture-logo { color: #E1B2B6; }
-        .aperture-logo path { stroke-width: 2; }
+        .aperture-logo { 
+            color: #E1B2B6;
+            --open-progress: 0;
+        }
+        .aperture-logo path {
+            stroke-width: 2;
+            transform-box: fill-box;
+            transform-origin: 50% 50%;
+            transform: rotate(calc(var(--blade-angle, 0deg) * var(--open-progress)));
+            transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+        }
         .aperture-logo circle { stroke-width: 1.6; }
+        .aperture-logo path:nth-of-type(1) { --blade-angle: -16deg; }
+        .aperture-logo path:nth-of-type(2) { --blade-angle: -12deg; }
+        .aperture-logo path:nth-of-type(3) { --blade-angle: -8deg; }
+        .aperture-logo path:nth-of-type(4) { --blade-angle: -4deg; }
+        .aperture-logo path:nth-of-type(5) { --blade-angle: 4deg; }
+        .aperture-logo path:nth-of-type(6) { --blade-angle: 8deg; }
+        .aperture-logo path:nth-of-type(7) { --blade-angle: 12deg; }
+        .aperture-logo path:nth-of-type(8) { --blade-angle: 16deg; }
         @media (max-width: 768px) {
             header { min-height: 100vh; }
             .hero-decor { opacity: 0.5; transform: scale(0.72); }
@@ -1134,6 +1151,21 @@
             }
         };
 
+        function initApertureScrollAnimation() {
+            const logos = document.querySelectorAll('.aperture-logo');
+            if (!logos.length) return;
+
+            const update = () => {
+                const maxScroll = Math.max(1, document.documentElement.scrollHeight - window.innerHeight);
+                const progress = Math.min(1, window.scrollY / Math.min(maxScroll, window.innerHeight * 1.2));
+                logos.forEach(logo => logo.style.setProperty('--open-progress', progress.toFixed(3)));
+            };
+
+            update();
+            window.addEventListener('scroll', update, { passive: true });
+            window.addEventListener('resize', update);
+        }
+
         // הפעלה ראשונית
         document.addEventListener('DOMContentLoaded', () => {
             initializeCharacterReveal();
@@ -1148,6 +1180,7 @@
             document.querySelectorAll('.divider-line, .gallery-item, .contrast-reveal, .icon-spin-appear, .draw-svg-icon').forEach(el => {
                 observer.observe(el);
             });
+            initApertureScrollAnimation();
         });
 
         window.onload = function() {
