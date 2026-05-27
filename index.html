@@ -37,6 +37,8 @@
                         },
                         accentRose: '#E1B2B6',
                         accentMint: '#CBE4DE',
+                        mintLeaf: '#9FD3C7',
+                        mintDeep: '#6FAE9F',
                         darkGreen: '#2C4A3E'
                     },
                     fontFamily: {
@@ -94,13 +96,13 @@
         
         /* אנימציות גלריה חלקות */
         .gallery-item {
-            transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease;
+            transition: transform 1s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.9s ease;
             opacity: 0;
-            transform: translateY(24px);
+            transform: translate(var(--entry-x, 0), var(--entry-y, 24px)) rotate(var(--entry-r,0deg));
         }
         .gallery-item.in-view {
             opacity: 1;
-            transform: translateY(0);
+            transform: translate(0,0) rotate(0deg);
         }
         
         /* אפקט הניגודיות לטקסט - חשיפה הדרגתית תו אחר תו */
@@ -168,8 +170,8 @@
           fill: #8E6955;
           stroke: #FDFBF9;
           stroke-miterlimit: 10;
-          animation: apertureLoop 4s linear infinite;
-          -webkit-animation: apertureLoop 4s linear infinite;
+          animation: apertureLoop 2.2s linear infinite;
+          -webkit-animation: apertureLoop 2.2s linear infinite;
         }
 
         @keyframes apertureLoop {
@@ -268,7 +270,7 @@
         }
         .gallery-item.deck-enter {
             opacity: 0;
-            transform: translateY(42px) rotate(var(--deck-rotate, 0deg)) scale(0.92);
+            transform: translate(var(--entry-x, 0), var(--entry-y, 42px)) rotate(var(--entry-r,0deg)) scale(0.92);
         }
     </style>
 </head>
@@ -328,20 +330,20 @@
         <div class="absolute inset-0 bg-white/65"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto text-center py-12">
-            <span class="text-xs uppercase tracking-[0.3em] text-mocha-600 font-bold mb-4 block">תמר אלישיב | סטודיו לצילום אמנותי</span>
-            <h1 class="text-4xl sm:text-6xl font-serif font-light text-mocha-900 leading-tight">צילום משפחתי רך, נקי ומדויק</h1>
-            <p class="mt-6 text-base sm:text-lg text-mocha-700 max-w-2xl mx-auto leading-relaxed">ללכוד את הרגעים הכי יפים שלכם ולהפוך אותם לסיפור חזותי אחיד, טבעי ואלגנטי.</p>
-            <div class="mt-8 mx-auto max-w-sm bg-white/80 border border-mocha-200 rounded-2xl px-6 py-5 shadow-sm">
-                <div class="flex items-center justify-center gap-3">
-                    <div class="scale-[0.14] origin-center"><div class="aperture-logo-wrapper aperture-trigger"><div class="aperture-logo-container"><svg version="1.1" class="aperture-animated-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path class="blade-1" d="M107.033-25.482c7.357-2.104,68.443,10.182,103.83,69.055 C140.083,27.43,74.477,57.36,48.427,85.156C42.474,57.738,72.809-15.694,107.033-25.482z"/><path class="blade-2" d="M26.545-0.31c4.283-6.339,58.974-36.194,123.926-13.841 C85.873,18.98,54.855,84.081,52.767,122.117C30.582,104.939,6.619,29.188,26.545-0.31z"/><path class="blade-3" d="M-18.933,70.712c-0.794-7.609,21.912-65.635,86.036-90.261 C38.915,47.354,57,117.161,79.848,147.64C51.813,148.742-15.236,106.116-18.933,70.712z"/><path class="blade-4" d="M-8.118,154.349c-5.5-5.319-25.404-64.363,7.888-124.445 c21.412,69.369,80.137,111.221,117.232,119.881C96.233,168.648,17.472,179.095-8.118,154.349z"/><path class="blade-5" d="M53.927,211.467c-7.632-0.54-60.833-32.976-73.95-100.4 c60.992,39.376,132.879,33.688,166.864,16.479C143.058,155.346,89.438,213.976,53.927,211.467z"/><path class="blade-6" d="M138.171,215.341c-6.193,4.492-67.797,13.842-121.185-29.378 c72.033-9.042,123.446-59.604,138.417-94.633C170.374,115.058,166.985,194.437,138.171,215.341z"/><path class="blade-7" d="M205.193,164.158c-1.855,7.422-43.037,54.184-111.715,55.391 c49.37-53.228,56.252-125.009,45.204-161.465C165.404,66.639,213.83,129.623,205.193,164.158z"/><path class="blade-8" d="M223.641,81.866c3.346,6.88,1.857,69.171-49.977,114.243 c3.605-72.51-37.262-131.922-69.159-152.748C130.473,32.738,208.059,49.859,223.641,81.866z"/><path class="blade-9" d="M184.873,6.973c6.986,3.116,45.885,51.793,35.15,119.639 C176.176,68.748,106.681,49.504,68.86,54.053C81.923,29.225,152.363-7.531,184.873,6.973z"/></svg></div></div></div>
-                    <span class="font-serif text-lg text-mocha-900">רגעים אמיתיים</span>
+            <div class="mx-auto max-w-3xl bg-mocha-900/88 text-cream-100 border border-mintLeaf/40 rounded-3xl px-8 py-10 shadow-2xl backdrop-blur-sm">
+                <div class="flex justify-center mb-4">
+                    <div class="scale-[0.28] origin-center"><div class="aperture-logo-wrapper aperture-trigger"><div class="aperture-logo-container" style="border-color:#9FD3C7"><svg version="1.1" class="aperture-animated-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path class="blade-1" d="M107.033-25.482c7.357-2.104,68.443,10.182,103.83,69.055 C140.083,27.43,74.477,57.36,48.427,85.156C42.474,57.738,72.809-15.694,107.033-25.482z"/><path class="blade-2" d="M26.545-0.31c4.283-6.339,58.974-36.194,123.926-13.841 C85.873,18.98,54.855,84.081,52.767,122.117C30.582,104.939,6.619,29.188,26.545-0.31z"/><path class="blade-3" d="M-18.933,70.712c-0.794-7.609,21.912-65.635,86.036-90.261 C38.915,47.354,57,117.161,79.848,147.64C51.813,148.742-15.236,106.116-18.933,70.712z"/><path class="blade-4" d="M-8.118,154.349c-5.5-5.319-25.404-64.363,7.888-124.445 c21.412,69.369,80.137,111.221,117.232,119.881C96.233,168.648,17.472,179.095-8.118,154.349z"/><path class="blade-5" d="M53.927,211.467c-7.632-0.54-60.833-32.976-73.95-100.4 c60.992,39.376,132.879,33.688,166.864,16.479C143.058,155.346,89.438,213.976,53.927,211.467z"/><path class="blade-6" d="M138.171,215.341c-6.193,4.492-67.797,13.842-121.185-29.378 c72.033-9.042,123.446-59.604,138.417-94.633C170.374,115.058,166.985,194.437,138.171,215.341z"/><path class="blade-7" d="M205.193,164.158c-1.855,7.422-43.037,54.184-111.715,55.391 c49.37-53.228,56.252-125.009,45.204-161.465C165.404,66.639,213.83,129.623,205.193,164.158z"/><path class="blade-8" d="M223.641,81.866c3.346,6.88,1.857,69.171-49.977,114.243 c3.605-72.51-37.262-131.922-69.159-152.748C130.473,32.738,208.059,49.859,223.641,81.866z"/><path class="blade-9" d="M184.873,6.973c6.986,3.116,45.885,51.793,35.15,119.639 C176.176,68.748,106.681,49.504,68.86,54.053C81.923,29.225,152.363-7.531,184.873,6.973z"/></svg></div></div></div>
+                </div>
+                <span class="text-xs uppercase tracking-[0.3em] text-mintLeaf font-bold mb-3 block">תמר אלישיב | סטודיו לצילום אמנותי</span>
+                <h1 class="text-4xl sm:text-6xl font-serif font-light text-cream-100 leading-tight">צילום משפחתי רך, נקי ומדויק</h1>
+                <p class="mt-6 text-base sm:text-lg text-cream-200 max-w-2xl mx-auto leading-relaxed">ללכוד את הרגעים הכי יפים שלכם ולהפוך אותם לסיפור חזותי אחיד, טבעי ואלגנטי.</p>
+                <p class="mt-4 text-mintLeaf font-serif text-xl">רגעים אמיתיים</p>
+                <div class="mt-8 flex justify-center items-center gap-4">
+                    <a href="#contact" class="bg-mintDeep hover:bg-mintLeaf text-mocha-900 px-8 py-3 rounded-full text-xs tracking-wider uppercase transition-all">תיאום סשן</a>
+                    <a href="#gallery" class="border border-mintLeaf text-cream-100 hover:bg-white/10 px-8 py-3 rounded-full text-xs tracking-wider uppercase transition-all">צפייה בגלריה</a>
                 </div>
             </div>
-            <div class="mt-8 flex justify-center items-center gap-4">
-                <a href="#contact" class="bg-mocha-800 hover:bg-mocha-700 text-cream-100 px-8 py-3 rounded-full text-xs tracking-wider uppercase transition-all">תיאום סשן</a>
-                <a href="#gallery" class="border border-mocha-400 text-mocha-800 hover:bg-white/70 px-8 py-3 rounded-full text-xs tracking-wider uppercase transition-all">צפייה בגלריה</a>
-            </div>
-        </div>
+        </div></div>
     </header>
 
     <!-- סעיף אודות - קצת עלי -->
@@ -363,14 +365,14 @@
     </section>
 
     <!-- סעיף גלריה - תיק עבודות מהיר -->
-    <section id="gallery" class="divider-line py-24 bg-cream-100">
+    <section id="gallery" class="divider-line py-24 bg-mocha-800">
         <div class="max-w-7xl mx-auto px-6">
             
-            <div class="text-center max-w-2xl mx-auto mb-16">
+            <div class="text-center max-w-2xl mx-auto mb-16 text-cream-100">
                 <span class="text-xs uppercase tracking-[0.25em] text-mocha-600 font-bold block mb-2">תיק עבודות</span>
                 <h2 class="text-3xl sm:text-4xl font-serif font-light text-mocha-900">גלריית עבודות נבחרות</h2>
                 <div class="w-12 h-[2px] bg-accentRose mx-auto mt-4 mb-4 rounded-full"></div>
-                <p class="text-sm text-mocha-700 leading-relaxed">גישה ישירה ומהירה לקטגוריות הצילום הראשיות שלי. השראה, עדינות ואסתטיקה ללא פשרות.</p>
+                <p class="text-sm text-cream-200 leading-relaxed">גישה ישירה ומהירה לקטגוריות הצילום הראשיות שלי. השראה, עדינות ואסתטיקה ללא פשרות.</p>
                 
                 <!-- כפתורי סינון קטגוריות מהיר -->
                 <div class="flex justify-center flex-wrap gap-2 mt-8">
@@ -517,7 +519,7 @@
             <!-- בורר קולקציות אינטראקטיבי מעוצב -->
             <div class="bg-cream-100 rounded-3xl p-8 border border-mocha-200 shadow-sm">
                 <div class="text-center mb-8">
-                    <h4 class="text-lg font-bold text-mocha-900 tracking-wider">בחרו קולקציה וקונספט</h4>
+                    <h4 class="text-lg font-bold text-mocha-900 tracking-wider">המשך ישיר ל‑ONE STYLE: בחרו קולקציה וקונספט</h4>
                     <p class="text-xs text-mocha-500 mt-1">לחצו על הקולקציות השונות כדי לצפות בהרמוניה ובפרטי הסטיילינג המוצעים:</p>
                 </div>
 
@@ -871,7 +873,9 @@
             // הצגה והסתרה רכה של התמונות
             const visibleItems = [];
             items.forEach((item, idx) => {
-                item.style.setProperty('--deck-rotate', `${(idx % 2 === 0 ? -1 : 1) * (6 + (idx % 3) * 2)}deg`);
+                item.style.setProperty('--entry-x', `${(Math.random()*120-60).toFixed(0)}px`);
+                item.style.setProperty('--entry-y', `${(Math.random()*120-60).toFixed(0)}px`);
+                item.style.setProperty('--entry-r', `${(Math.random()*24-12).toFixed(1)}deg`);
                 if (category === 'all' || item.classList.contains(category)) {
                     item.style.display = 'block';
                     item.classList.remove('in-view');
@@ -1149,7 +1153,9 @@
             initializeSvgDrawLengths();
             document.querySelectorAll('.gallery-item').forEach((item, idx) => {
                 item.classList.add('deck-enter');
-                item.style.setProperty('--deck-rotate', `${(idx % 2 === 0 ? -1 : 1) * (8 + (idx % 3) * 2)}deg`);
+                item.style.setProperty('--entry-x', `${(Math.random()*140-70).toFixed(0)}px`);
+                item.style.setProperty('--entry-y', `${(Math.random()*140-70).toFixed(0)}px`);
+                item.style.setProperty('--entry-r', `${(Math.random()*28-14).toFixed(1)}deg`);
                 setTimeout(() => item.classList.remove('deck-enter'), 250 + (idx * 180));
             });
             
