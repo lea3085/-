@@ -126,8 +126,12 @@
         .draw-svg-icon.in-view path, .draw-svg-icon.in-view circle, .draw-svg-icon.in-view line, .draw-svg-icon.in-view polyline, .draw-svg-icon.in-view rect {
             stroke-dashoffset: 0;
         }
-        .aperture-logo { color: #E1B2B6; }
-        .aperture-logo path { stroke-width: 2; }
+        .aperture-logo { 
+            color: #E1B2B6;
+        }
+        .aperture-logo path {
+            stroke-width: 2;
+        }
         .aperture-logo circle { stroke-width: 1.6; }
         @media (max-width: 768px) {
             header { min-height: 100vh; }
@@ -202,17 +206,7 @@
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- לוגו האתר -->
             <a href="#" class="flex items-center gap-3 group">
-                <svg class="draw-svg-icon aperture-logo w-12 h-12 flex-shrink-0" viewBox="0 0 64 64" aria-hidden="true">
-                    <path d="M32 8 L45 16 L37 27 L24 27 Z"></path>
-                    <path d="M45 16 L56 30 L43 36 L37 27 Z"></path>
-                    <path d="M56 30 L52 47 L38 45 L43 36 Z"></path>
-                    <path d="M52 47 L36 57 L29 44 L38 45 Z"></path>
-                    <path d="M36 57 L18 53 L21 39 L29 44 Z"></path>
-                    <path d="M18 53 L8 38 L20 31 L21 39 Z"></path>
-                    <path d="M8 38 L10 21 L24 23 L20 31 Z"></path>
-                    <path d="M10 21 L23 9 L31 20 L24 23 Z"></path>
-                    <circle cx="32" cy="32" r="10"></circle>
-                </svg>
+                <span class="aperture-slot w-12 h-12 flex-shrink-0" data-aperture-extra="draw-svg-icon aperture-logo"></span>
                 <span class="flex flex-col items-start">
                 <span class="font-serif text-2xl tracking-widest font-light text-mocha-900 group-hover:text-mocha-600 transition-colors duration-300">TAMAR ELYASHIV</span>
                 <span class="text-xs uppercase tracking-[0.2em] text-mocha-500 font-medium">צילום אמנותי</span>
@@ -270,9 +264,7 @@
             <!-- קופסת לוגו פרימיום מעוצבת -->
             <div class="inline-block bg-mocha-900 text-cream-100 px-10 py-14 sm:px-14 sm:py-20 rounded-3xl shadow-2xl border border-mocha-800/50 max-w-md mx-auto my-6 transform hover:scale-[1.01] transition-transform duration-500">
                 <div class="flex justify-center mb-4">
-                    <svg class="draw-svg-icon aperture-logo aperture-badge w-14 h-14" viewBox="0 0 64 64" aria-hidden="true">
-                        <path d="M32 8 L45 16 L37 27 L24 27 Z"></path><path d="M45 16 L56 30 L43 36 L37 27 Z"></path><path d="M56 30 L52 47 L38 45 L43 36 Z"></path><path d="M52 47 L36 57 L29 44 L38 45 Z"></path><path d="M36 57 L18 53 L21 39 L29 44 Z"></path><path d="M18 53 L8 38 L20 31 L21 39 Z"></path><path d="M8 38 L10 21 L24 23 L20 31 Z"></path><path d="M10 21 L23 9 L31 20 L24 23 Z"></path><circle cx="32" cy="32" r="10"></circle>
-                    </svg>
+                    <span class="aperture-slot w-14 h-14" data-aperture-extra="draw-svg-icon aperture-logo aperture-badge"></span>
                 </div>
                 <h1 class="font-serif text-4xl sm:text-5xl font-light tracking-widest leading-none mb-3">תמר אלישיב</h1>
                 <p class="text-xs uppercase tracking-[0.25em] text-accentRose font-medium mb-6">PORTRAIT PHOTOGRAPHY</p>
@@ -333,9 +325,7 @@
                             <div class="absolute inset-0 bg-gradient-to-b from-mocha-800 to-mocha-950 opacity-95"></div>
                             <div class="relative z-10 space-y-4">
                                 <div class="w-16 h-16 rounded-full border border-accentRose flex items-center justify-center mx-auto text-2xl text-accentRose">
-                                    <svg class="draw-svg-icon aperture-logo w-10 h-10" viewBox="0 0 64 64" aria-hidden="true">
-                                        <path d="M32 8 L45 16 L37 27 L24 27 Z"></path><path d="M45 16 L56 30 L43 36 L37 27 Z"></path><path d="M56 30 L52 47 L38 45 L43 36 Z"></path><path d="M52 47 L36 57 L29 44 L38 45 Z"></path><path d="M36 57 L18 53 L21 39 L29 44 Z"></path><path d="M18 53 L8 38 L20 31 L21 39 Z"></path><path d="M8 38 L10 21 L24 23 L20 31 Z"></path><path d="M10 21 L23 9 L31 20 L24 23 Z"></path><circle cx="32" cy="32" r="10"></circle>
-                                    </svg>
+                                    <span class="aperture-slot w-10 h-10" data-aperture-extra="draw-svg-icon aperture-logo"></span>
                                 </div>
                                 <h4 class="font-serif text-xl tracking-wider font-light">תמר אלישיב</h4>
                                 <p class="text-[10px] text-mocha-300 tracking-widest uppercase">Visual Storyteller</p>
@@ -479,7 +469,7 @@
             
             <div class="text-center max-w-3xl mx-auto mb-16">
                 <span class="text-xs uppercase tracking-[0.3em] text-accentRose font-bold block mb-2">קונספט בלעדי</span>
-                <h2 class="text-3xl sm:text-5xl font-serif font-light text-mocha-900 inline-flex items-center gap-3">הכירו את <span class="font-semibold text-mocha-700 font-display">ONE STYLE</span><svg class="draw-svg-icon aperture-logo w-10 h-10" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 L45 16 L37 27 L24 27 Z"></path><path d="M45 16 L56 30 L43 36 L37 27 Z"></path><path d="M56 30 L52 47 L38 45 L43 36 Z"></path><path d="M52 47 L36 57 L29 44 L38 45 Z"></path><path d="M36 57 L18 53 L21 39 L29 44 Z"></path><path d="M18 53 L8 38 L20 31 L21 39 Z"></path><path d="M8 38 L10 21 L24 23 L20 31 Z"></path><path d="M10 21 L23 9 L31 20 L24 23 Z"></path><circle cx="32" cy="32" r="10"></circle></svg></h2>
+                <h2 class="text-3xl sm:text-5xl font-serif font-light text-mocha-900 inline-flex items-center gap-3">הכירו את <span class="font-semibold text-mocha-700 font-display">ONE STYLE</span><span class="aperture-slot w-10 h-10" data-aperture-extra="draw-svg-icon aperture-logo"></span></h2>
                 <div class="w-20 h-[2px] bg-accentRose mx-auto my-4 rounded-full"></div>
                 <p class="text-mocha-600 text-lg font-light italic">
                     "רגעים אמיתיים בסטייל אחיד והרמוני."
@@ -778,7 +768,7 @@
         <div class="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
             <!-- עמודה 1 -->
             <div class="space-y-4 text-right">
-                <span class="font-serif text-xl tracking-widest text-white flex items-center gap-2"><svg class="draw-svg-icon aperture-logo w-8 h-8" viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 L45 16 L37 27 L24 27 Z"></path><path d="M45 16 L56 30 L43 36 L37 27 Z"></path><path d="M56 30 L52 47 L38 45 L43 36 Z"></path><path d="M52 47 L36 57 L29 44 L38 45 Z"></path><path d="M36 57 L18 53 L21 39 L29 44 Z"></path><path d="M18 53 L8 38 L20 31 L21 39 Z"></path><path d="M8 38 L10 21 L24 23 L20 31 Z"></path><path d="M10 21 L23 9 L31 20 L24 23 Z"></path><circle cx="32" cy="32" r="10"></circle></svg>TAMAR ELYASHIV</span>
+                <span class="font-serif text-xl tracking-widest text-white flex items-center gap-2"><span class="aperture-slot w-8 h-8" data-aperture-extra="draw-svg-icon aperture-logo"></span>TAMAR ELYASHIV</span>
                 <p class="text-xs text-mocha-300 leading-relaxed">סטודיו לצילום פורטרטים, ניו בורן, ומשפחה. אסתטיקה נקייה ועל-זמנית בקו עדין ואמנותי.</p>
                 <div class="flex space-x-reverse space-x-3 pt-2">
                     <a href="#" class="w-9 h-9 rounded-full bg-mocha-800 hover:bg-accentRose flex items-center justify-center text-cream-100 hover:text-mocha-950 transition-colors icon-hover-effect" aria-label="וואטסאפ"><i class="fa-brands fa-whatsapp"></i></a>
@@ -1134,8 +1124,31 @@
             }
         };
 
+        async function injectApertureFromFile() {
+            const slots = document.querySelectorAll('.aperture-slot');
+            if (!slots.length) return;
+            try {
+                const res = await fetch('APERTOR.html');
+                const html = await res.text();
+                const doc = new DOMParser().parseFromString(html, 'text/html');
+                const templateSvg = doc.querySelector('.aperture-logo');
+                if (!templateSvg) return;
+
+                slots.forEach(slot => {
+                    const svg = templateSvg.cloneNode(true);
+                    const extra = slot.dataset.apertureExtra || 'draw-svg-icon aperture-logo';
+                    svg.classList.add(...extra.split(' ').filter(Boolean));
+                    svg.setAttribute('aria-hidden', 'true');
+                    slot.replaceWith(svg);
+                });
+            } catch (err) {
+                console.warn('Aperture icon injection failed:', err);
+            }
+        }
+
         // הפעלה ראשונית
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
+            await injectApertureFromFile();
             initializeCharacterReveal();
             initializeSvgDrawLengths();
             document.querySelectorAll('.gallery-item').forEach((item, idx) => {
