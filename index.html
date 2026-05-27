@@ -208,6 +208,59 @@
           -webkit-animation-play-state: running;
         }
 
+
+        .gallery-container {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        }
+        .gallery-container .box {
+          width: 100%;
+          min-height: 260px;
+          background: #583D31;
+        }
+        .gallery-container .box .content {
+          position: relative;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
+        .gallery-container .box .content img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          filter: saturate(9%);
+          transition: all 500ms cubic-bezier(.76,.16,.33,.99);
+        }
+        .gallery-container .box:hover .content img { filter: saturate(100%); }
+        .gallery-container .box .content::after {
+          content: "";
+          background: transparent;
+          width: 100%;
+          height: 100%;
+          border: 2px solid #fff;
+          display: block;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%) rotate(360deg);
+          opacity: 0;
+          transition: all 500ms cubic-bezier(.76,.16,.33,.99);
+        }
+        .gallery-container .box:hover .content::after {
+          opacity: 1;
+          width: 50%;
+          height: 50%;
+          transform: translate(-50%, -50%) rotate(180deg);
+        }
+        .gallery-container .box:nth-child(1) { grid-column: span 2; grid-row: span 1; }
+        .gallery-container .box:nth-child(2) { grid-row: span 1; }
+        @media screen and (min-width:1210px){
+          .gallery-container .box:nth-child(4), .gallery-container .box:nth-child(5) { grid-column: span 2; grid-row: span 1; }
+          .gallery-container .box:nth-child(1){ grid-column: span 1; }
+          .gallery-container .box:nth-child(3){ grid-column: span 2; }
+        }
+
         @media (max-width: 768px) {
             header { min-height: 100vh; }
             .hero-decor { opacity: 0.5; transform: scale(0.72); }
@@ -363,109 +416,19 @@
     <!-- סעיף גלריה - תיק עבודות מהיר -->
     <section id="gallery" class="divider-line py-24 bg-mocha-800">
         <div class="max-w-7xl mx-auto px-6">
-            
-            <div class="text-center max-w-2xl mx-auto mb-16 text-cream-100">
-                <span class="text-xs uppercase tracking-[0.25em] text-mocha-600 font-bold block mb-2">תיק עבודות</span>
-                <h2 class="text-3xl sm:text-4xl font-serif font-light text-mocha-900">גלריית עבודות נבחרות</h2>
-                <div class="w-12 h-[2px] bg-accentRose mx-auto mt-4 mb-4 rounded-full"></div>
-                <p class="text-sm text-cream-200 leading-relaxed">גישה ישירה ומהירה לקטגוריות הצילום הראשיות שלי. השראה, עדינות ואסתטיקה ללא פשרות.</p>
-                
-                <!-- כפתורי סינון קטגוריות מהיר -->
-                <div class="flex justify-center flex-wrap gap-2 mt-8">
-                    <button onclick="filterGallery('all')" id="tab-all" class="gallery-tab active-tab px-6 py-2.5 rounded-full text-xs font-semibold transition-all duration-300 bg-mocha-800 text-cream-100 shadow-sm">
-                        הכל
-                    </button>
-                    <button onclick="filterGallery('newborn')" id="tab-newborn" class="gallery-tab px-6 py-2.5 rounded-full text-xs font-medium transition-all duration-300 bg-white text-mocha-800 hover:bg-mocha-50 border border-mocha-200">
-                        ניו בורן (Newborn)
-                    </button>
-                    <button onclick="filterGallery('outdoor')" id="tab-outdoor" class="gallery-tab px-6 py-2.5 rounded-full text-xs font-medium transition-all duration-300 bg-white text-mocha-800 hover:bg-mocha-50 border border-mocha-200">
-                        צילומי חוץ (Outdoor)
-                    </button>
-                </div>
+            <div class="text-center max-w-2xl mx-auto mb-10 text-cream-100">
+                <span class="text-xs uppercase tracking-[0.25em] text-mintLeaf font-bold block mb-2">תיק עבודות</span>
+                <h2 class="text-3xl sm:text-4xl font-serif font-light text-cream-100">גלריית עבודות נבחרות</h2>
             </div>
 
-            <!-- גריד של קולקציות רכות המדמות את האווירה הטיפוסית -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" id="gallery-grid">
-                
-                <!-- כרטיסייה 1: ניו בורן -->
-                <div class="gallery-item newborn bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-mocha-100/60">
-                    <div class="relative aspect-[4/5] bg-gradient-to-tr from-cream-300 to-cream-100 flex flex-col items-center justify-center p-8 overflow-hidden">
-                        <div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-25" style="background-image: url('https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&q=80&w=400');"></div>
-                        <div class="absolute inset-4 border border-mocha-200/40 rounded-2xl pointer-events-none z-10"></div>
-                        <div class="z-20 text-center space-y-3">
-                            <span class="text-xs uppercase tracking-widest text-mocha-600 font-semibold bg-white/90 px-3 py-1 rounded-full shadow-sm">ניו בורן</span>
-                            <h3 class="font-serif text-xl text-mocha-900 font-light">רכות בראשיתית</h3>
-                            <p class="text-xs text-mocha-600 px-4 leading-relaxed">גווני שמנת עוטפים ורכים, המדגישים את הטוהר של הימים הראשונים.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- כרטיסייה 2: חוץ -->
-                <div class="gallery-item outdoor bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-mocha-100/60">
-                    <div class="relative aspect-[4/5] bg-gradient-to-tr from-[#D4E2D4] to-cream-100 flex flex-col items-center justify-center p-8 overflow-hidden">
-                        <div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-25" style="background-image: url('https://images.unsplash.com/photo-1502082553048-f009c37129b9?auto=format&fit=crop&q=80&w=400');"></div>
-                        <div class="absolute inset-4 border border-mocha-200/40 rounded-2xl pointer-events-none z-10"></div>
-                        <div class="z-20 text-center space-y-3">
-                            <span class="text-xs uppercase tracking-widest text-mocha-600 font-semibold bg-white/90 px-3 py-1 rounded-full shadow-sm">חוץ</span>
-                            <h3 class="font-serif text-xl text-mocha-900 font-light">חופש ויער ירוק</h3>
-                            <p class="text-xs text-mocha-600 px-4 leading-relaxed">קרני שמש חמימות המסתננות מבעד לענפים ומעניקות חיים ועומק לכל חיוך.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- כרטיסייה 3: ניו בורן -->
-                <div class="gallery-item newborn bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-mocha-100/60">
-                    <div class="relative aspect-[4/5] bg-gradient-to-tr from-[#F1E0DC] to-cream-100 flex flex-col items-center justify-center p-8 overflow-hidden">
-                        <div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-25" style="background-image: url('https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&q=80&w=400');"></div>
-                        <div class="absolute inset-4 border border-mocha-200/40 rounded-2xl pointer-events-none z-10"></div>
-                        <div class="z-20 text-center space-y-3">
-                            <span class="text-xs uppercase tracking-widest text-mocha-600 font-semibold bg-white/90 px-3 py-1 rounded-full shadow-sm">ניו בורן</span>
-                            <h3 class="font-serif text-xl text-mocha-900 font-light">קן חמים ואוהב</h3>
-                            <p class="text-xs text-mocha-600 px-4 leading-relaxed">קומפוזיציה נקייה ומבוקרת עם בדים טבעיים, פשתן וחיבוק הורי ממיס.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- כרטיסייה 4: חוץ -->
-                <div class="gallery-item outdoor bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-mocha-100/60">
-                    <div class="relative aspect-[4/5] bg-gradient-to-tr from-accentRose/20 to-cream-100 flex flex-col items-center justify-center p-8 overflow-hidden">
-                        <div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-25" style="background-image: url('https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&q=80&w=400');"></div>
-                        <div class="absolute inset-4 border border-mocha-200/40 rounded-2xl pointer-events-none z-10"></div>
-                        <div class="z-20 text-center space-y-3">
-                            <span class="text-xs uppercase tracking-widest text-mocha-600 font-semibold bg-white/90 px-3 py-1 rounded-full shadow-sm">חוץ</span>
-                            <h3 class="font-serif text-xl text-mocha-900 font-light">שקיעת אפרסק מלטפת</h3>
-                            <p class="text-xs text-mocha-600 px-4 leading-relaxed">אפקט אפרסק ייחודי וחמים בשעות הזהב המאוחרות של יום הצילומים.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- כרטיסייה 5: ניו בורן -->
-                <div class="gallery-item newborn bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-mocha-100/60">
-                    <div class="relative aspect-[4/5] bg-gradient-to-tr from-mocha-200 to-cream-100 flex flex-col items-center justify-center p-8 overflow-hidden">
-                        <div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-25" style="background-image: url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=400');"></div>
-                        <div class="absolute inset-4 border border-mocha-200/40 rounded-2xl pointer-events-none z-10"></div>
-                        <div class="z-20 text-center space-y-3">
-                            <span class="text-xs uppercase tracking-widest text-mocha-600 font-semibold bg-white/90 px-3 py-1 rounded-full shadow-sm">ניו בורן</span>
-                            <h3 class="font-serif text-xl text-mocha-900 font-light">פרטים קטנים ומתוקים</h3>
-                            <p class="text-xs text-mocha-600 px-4 leading-relaxed">פוקוס מושלם על האצבעות הקטנטנות, תווי הפנים והשיער הרך כנוצה.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- כרטיסייה 6: חוץ -->
-                <div class="gallery-item outdoor bg-white rounded-3xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-mocha-100/60">
-                    <div class="relative aspect-[4/5] bg-gradient-to-tr from-accentMint to-cream-100 flex flex-col items-center justify-center p-8 overflow-hidden">
-                        <div class="absolute inset-0 bg-cover bg-center mix-blend-multiply opacity-25" style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80');"></div>
-                        <div class="absolute inset-4 border border-mocha-200/40 rounded-2xl pointer-events-none z-10"></div>
-                        <div class="z-20 text-center space-y-3">
-                            <span class="text-xs uppercase tracking-widest text-mocha-600 font-semibold bg-white/90 px-3 py-1 rounded-full shadow-sm">חוץ</span>
-                            <h3 class="font-serif text-xl text-mocha-900 font-light">חוף ים אוורירי</h3>
-                            <p class="text-xs text-mocha-600 px-4 leading-relaxed">חול זהוב וגלי ים עדינים בקו אוורירי תכול ורחב ידיים, פשוט ויפהפה.</p>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="gallery-container" id="gallery-grid">
+              <div class="box gallery-item newborn"><div class="content"><img src="https://picsum.photos/600/400.jpg?image=100" alt="gallery 1"></div></div>
+              <div class="box gallery-item outdoor"><div class="content"><img src="https://picsum.photos/600/400.jpg?image=101" alt="gallery 2"></div></div>
+              <div class="box gallery-item newborn"><div class="content"><img src="https://picsum.photos/600/400.jpg?image=102" alt="gallery 3"></div></div>
+              <div class="box gallery-item outdoor"><div class="content"><img src="https://picsum.photos/600/400.jpg?image=103" alt="gallery 4"></div></div>
+              <div class="box gallery-item newborn"><div class="content"><img src="https://picsum.photos/600/400.jpg?image=104" alt="gallery 5"></div></div>
             </div>
+
             <svg class="section-divider-svg" viewBox="0 0 1000 14" preserveAspectRatio="none" aria-hidden="true">
                 <path class="section-divider-path" d="M2 8 Q 500 2 998 8"></path>
             </svg>
