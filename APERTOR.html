@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Animated Loader</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    h1, h3 {
+      width: 100%;
+      text-align: center;
+      color: #00a2d8;
+      font-family: sans-serif;
+      margin-top: 10px;
+    }
+    #wrapper {
+      width: 200px;
+      height: 200px;
+      position: relative;
+      margin: 40px auto;
+    }
+    svg {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: -12px;
+      left: -14px;
+    }
+    #aperture {
+      width: 180px;
+      height: 180px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 100px;
+      overflow: hidden;
+      border: 4px solid #abcf37;
+    }
+    #innerloader {
+      width: 100px;
+      height: 20px;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform-origin: 50% 50%;
+      -webkit-transform-origin: 50% 50%;
+      transform: translate(-50%,-50%);
+      -webkit-transform: translate(-50%,-50%);
+      text-align: center;
+      color: #abcf37;
+      font-size: 20px;
+      font-family: sans-serif;
+    }
+    #bladeOne {
+      transform-origin: 210.02px 43.57px;
+      -webkit-transform-origin: 210.02px 43.57px;
+    }
+    #bladeTwo {
+      transform-origin: 150.47px -14.15px;
+      -webkit-transform-origin: 150.47px -14.15px;
+    }
+    #bladeThree {
+      transform-origin: 67.1px -19.55px;
+      -webkit-transform-origin: 67.1px -19.55px;
+    }
+    #bladeFour {
+      transform-origin: -0.23px 29.9px;
+      -webkit-transform-origin: -0.23px 29.9px;
+    }
+    #bladeFive {
+      transform-origin: -20.02px 111.07px;
+      -webkit-transform-origin: -20.02px 111.07px;
+    }
+    #bladeSix {
+      transform-origin: 16.99px 185.96px;
+      -webkit-transform-origin: 16.99px 185.96px;
+    }
+    #bladeSeven {
+      transform-origin: 93.48px 219.55px;
+      -webkit-transform-origin: 93.48px 219.55px;
+    }
+    #bladeEight {
+      transform-origin: 173.66px 196.11px;
+      -webkit-transform-origin: 173.66px 196.11px;
+    }
+    #bladeNine {
+      transform-origin: 220.02px 126.61px;
+      -webkit-transform-origin: 220.02px 126.61px;
+    }
+    svg path {
+      animation: open 4s linear infinite;
+      -webkit-animation: open 4s linear infinite;
+    }
+    @keyframes open {
+      0% {transform: rotate(-20deg);}
+      20% {transform: rotate(-20deg);}
+      30% {transform: rotate(15deg);}
+      70% {transform: rotate(15deg);}
+      80% {transform: rotate(-20deg);}
+      100% {transform: rotate(-20deg);}
+    }
+    @-webkit-keyframes open {
+      0% {-webkit-transform: rotate(-20deg);}
+      20% {-webkit-transform: rotate(-20deg);}
+      30% {-webkit-transform: rotate(15deg);}
+      70% {-webkit-transform: rotate(15deg);}
+      80% {-webkit-transform: rotate(-20deg);}
+      100% {-webkit-transform: rotate(-20deg);}
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Cool Little Loader</h1>
+  <h3>done in svg and CSS</h3>
+
+  <div id="wrapper">
+    <div id="aperture">
+      <div id="innerloader">Loading ...</div>
+      <svg version="1.1" id="loader" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+           width="200px" height="200px" viewBox="0 0 200 200" enable-background="new 0 0 200 200" xml:space="preserve">
+        <path id="bladeOne" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M107.033-25.482c7.357-2.104,68.443,10.182,103.83,69.055 C140.083,27.43,74.477,57.36,48.427,85.156C42.474,57.738,72.809-15.694,107.033-25.482z"/>
+        <path id="bladeTwo" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M26.545-0.31c4.283-6.339,58.974-36.194,123.926-13.841 C85.873,18.98,54.855,84.081,52.767,122.117C30.582,104.939,6.619,29.188,26.545-0.31z"/>
+        <path id="bladeThree" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M-18.933,70.712c-0.794-7.609,21.912-65.635,86.036-90.261 C38.915,47.354,57,117.161,79.848,147.64C51.813
