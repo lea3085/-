@@ -11,59 +11,101 @@
       --accent-rose: #E1B2B6;
     }
 
-    * { box-sizing: border-box; margin: 0; }
-    body {
-      min-height: 200vh;
-      display: grid;
-      place-items: start center;
-      background: linear-gradient(180deg, #FDFBF9 0%, var(--mocha-100) 100%);
-      padding-top: 14vh;
+    * { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0;
     }
 
-    .aperture-wrap {
-      width: 220px;
-      height: 220px;
-      border: 1px solid rgba(142, 105, 85, 0.25);
-      border-radius: 9999px;
+    body {
+      min-height: 100vh;
       display: grid;
       place-items: center;
+      background: linear-gradient(180deg, #FDFBF9 0%, var(--mocha-100) 100%);
+    }
+
+    #wrapper {
+      width: 200px;
+      height: 200px;
+      position: relative;
+    }
+
+    #aperture {
+      width: 180px;
+      height: 180px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 100px;
+      overflow: hidden;
+      border: 4px solid #abcf37;
+      /* הוספת סגנונות הרקע מהקובץ המקורי של APERTOR */
       background: rgba(255,255,255,0.55);
       box-shadow: 0 16px 30px rgba(61, 42, 33, 0.08);
       backdrop-filter: blur(2px);
     }
 
-    .aperture-logo {
-      width: 150px;
-      height: 150px;
-      color: var(--accent-rose);
+    svg {
+      width: 200px;
+      height: 200px;
+      position: absolute;
+      top: -12px;
+      left: -14px;
     }
 
-    .aperture-logo path,
-    .aperture-logo circle {
-      fill: none;
-      stroke: currentColor;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    /* נקודות ציר עבור כל להב בצמצם */
+    #bladeOne { transform-origin: 210.02px 43.57px; }
+    #bladeTwo { transform-origin: 150.47px -14.15px; }
+    #bladeThree { transform-origin: 67.1px -19.55px; }
+    #bladeFour { transform-origin: -0.23px 29.9px; }
+    #bladeFive { transform-origin: -20.02px 111.07px; }
+    #bladeSix { transform-origin: 16.99px 185.96px; }
+    #bladeSeven { transform-origin: 93.48px 219.55px; }
+    #bladeEight { transform-origin: 173.66px 196.11px; }
+    #bladeNine { transform-origin: 220.02px 126.61px; }
+
+    /* הגדרות ההנפשה */
+    svg path {
+      animation: open 4s linear infinite;
+      -webkit-animation: open 4s linear infinite;
     }
 
-    .aperture-logo path { stroke-width: 2; }
+    @keyframes open {
+      0% { transform: rotate(-20deg); }
+      20% { transform: rotate(-20deg); }
+      30% { transform: rotate(15deg); }
+      70% { transform: rotate(15deg); }
+      80% { transform: rotate(-20deg); }
+      100% { transform: rotate(-20deg); }
+    }
 
-    .aperture-logo circle { stroke-width: 1.6; }
+    @-webkit-keyframes open {
+      0% { -webkit-transform: rotate(-20deg); }
+      20% { -webkit-transform: rotate(-20deg); }
+      30% { -webkit-transform: rotate(15deg); }
+      70% { -webkit-transform: rotate(15deg); }
+      80% { -webkit-transform: rotate(-20deg); }
+      100% { -webkit-transform: rotate(-20deg); }
+    }
   </style>
 </head>
 <body>
-  <div class="aperture-wrap" aria-label="סמל צמצם">
-    <svg class="aperture-logo" viewBox="0 0 64 64" aria-hidden="true">
-      <path d="M32 8 L45 16 L37 27 L24 27 Z"></path>
-      <path d="M45 16 L56 30 L43 36 L37 27 Z"></path>
-      <path d="M56 30 L52 47 L38 45 L43 36 Z"></path>
-      <path d="M52 47 L36 57 L29 44 L38 45 Z"></path>
-      <path d="M36 57 L18 53 L21 39 L29 44 Z"></path>
-      <path d="M18 53 L8 38 L20 31 L21 39 Z"></path>
-      <path d="M8 38 L10 21 L24 23 L20 31 Z"></path>
-      <path d="M10 21 L23 9 L31 20 L24 23 Z"></path>
-      <circle cx="32" cy="32" r="10"></circle>
-    </svg>
+
+  <div id="wrapper" aria-label="סמל צמצם מונפש">
+    <div id="aperture">
+      <svg version="1.1" id="loader" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+           width="200px" height="200px" viewBox="0 0 200 200" xml:space="preserve">
+        <path id="bladeOne" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M107.033-25.482c7.357-2.104,68.443,10.182,103.83,69.055 C140.083,27.43,74.477,57.36,48.427,85.156C42.474,57.738,72.809-15.694,107.033-25.482z"/>
+        <path id="bladeTwo" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M26.545-0.31c4.283-6.339,58.974-36.194,123.926-13.841 C85.873,18.98,54.855,84.081,52.767,122.117C30.582,104.939,6.619,29.188,26.545-0.31z"/>
+        <path id="bladeThree" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M-18.933,70.712c-0.794-7.609,21.912-65.635,86.036-90.261 C38.915,47.354,57,117.161,79.848,147.64C51.813,148.742-15.236,106.116-18.933,70.712z"/>
+        <path id="bladeFour" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M-8.118,154.349c-5.5-5.319-25.404-64.363,7.888-124.445 c21.412,69.369,80.137,111.221,117.232,119.881C96.233,168.648,17.472,179.095-8.118,154.349z"/>
+        <path id="bladeFive" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M53.927,211.467c-7.632-0.54-60.833-32.976-73.95-100.4 c60.992,39.376,132.879,33.688,166.864,16.479C143.058,155.346,89.438,213.976,53.927,211.467z"/>
+        <path id="bladeSix" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M138.171,215.341c-6.193,4.492-67.797,13.842-121.185-29.378 c72.033-9.042,123.446-59.604,138.417-94.633C170.374,115.058,166.985,194.437,138.171,215.341z"/>
+        <path id="bladeSeven" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M205.193,164.158c-1.855,7.422-43.037,54.184-111.715,55.391 c49.37-53.228,56.252-125.009,45.204-161.465C165.404,66.639,213.83,129.623,205.193,164.158z"/>
+        <path id="bladeEight" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M223.641,81.866c3.346,6.88,1.857,69.171-49.977,114.243 c3.605-72.51-37.262-131.922-69.159-152.748C130.473,32.738,208.059,49.859,223.641,81.866z"/>
+        <path id="bladeNine" fill="#00a2d8" stroke="#FFFFFF" stroke-miterlimit="10" d="M184.873,6.973c6.986,3.116,45.885,51.793,35.15,119.639 C176.176,68.748,106.681,49.504,68.86,54.053C81.923,29.225,152.363-7.531,184.873,6.973z"/>
+      </svg>
+    </div>
   </div>
 
 </body>
