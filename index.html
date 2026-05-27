@@ -167,8 +167,8 @@
         .aperture-logo-wrapper .blade-9 { transform-origin: 220.02px 126.61px; -webkit-transform-origin: 220.02px 126.61px; }
 
         .aperture-logo-wrapper svg.aperture-animated-svg path {
-          fill: #8E6955;
-          stroke: #FDFBF9;
+          fill: #9FD3C7;
+          stroke: #2C4A3E;
           stroke-miterlimit: 10;
           animation: apertureLoop 2.2s linear infinite;
           -webkit-animation: apertureLoop 2.2s linear infinite;
@@ -277,7 +277,7 @@
 <body class="overflow-x-hidden antialiased">
 
     <!-- סרגל ניווט עליון -->
-    <nav class="sticky top-0 z-50 bg-cream-100/90 backdrop-blur-md border-b border-mocha-100/80 py-1 px-4 md:px-8 transition-all duration-300">
+    <nav class="sticky top-0 z-50 bg-cream-100/90 backdrop-blur-md border-b border-mocha-100/80 py-0.5 px-3 md:px-6 transition-all duration-300">
         <div class="max-w-7xl mx-auto flex justify-between items-center">
             <!-- לוגו האתר -->
             <a href="#" class="flex items-center gap-3 group">
@@ -327,7 +327,7 @@
             <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1517457210348-703079e57d4c?auto=format&fit=crop&w=1600&q=80')"></div>
             <div class="hero-slide" style="background-image:url('https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=1600&q=80')"></div>
         </div>
-        <div class="absolute inset-0 bg-white/65"></div>
+        <div class="absolute inset-0 bg-mocha-950/45"></div>
 
         <div class="relative z-10 max-w-4xl mx-auto text-center py-12">
             <div class="mx-auto max-w-3xl bg-mocha-900/88 text-cream-100 border border-mintLeaf/40 rounded-3xl px-8 py-10 shadow-2xl backdrop-blur-sm">
@@ -493,15 +493,15 @@
             </div>
 
             <!-- פילוסופיית הקונספט -->
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-20">
-                <div class="lg:col-span-12 space-y-6 text-right bg-mocha-50 p-8 rounded-3xl border border-mocha-100/80 shadow-sm">
-                    <p class="contrast-reveal text-lg leading-relaxed font-light">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start mb-10">
+                <div class="lg:col-span-12 space-y-6 text-right bg-mocha-50 p-8 rounded-3xl border border-mocha-100/80 shadow-sm overflow-hidden">
+                    <p class="contrast-reveal text-lg leading-relaxed font-light break-words">
                         במקום לרוץ בין לוקיישנים שונים, להחליף סטים מתישים ולייצר עומס ויזואלי, סדרת ONE STYLE מתמקדת במה שבאמת הופך תמונה למושלמת — החיבור האמיתי ביניכם.
                     </p>
-                    <p class="contrast-reveal leading-relaxed">
+                    <p class="contrast-reveal leading-relaxed break-words">
                         המבטים החטופים בין האחים, החיבוק המשפחתי האותנטי, הצחוק הטבעי של הילדים והקרבה שלכם. 
                     </p>
-                    <p class="contrast-reveal leading-relaxed">
+                    <p class="contrast-reveal leading-relaxed break-words">
                         כל סשן בקונספט זה נבנה סביב פלטת צבעים אחידה, סטיילינג מוקפד ולוקיישן ייחודי אחד שנבחר בדיוק רב כדי ליצור סדרת תמונות הומוגנית ויוקרתית שנראית כמו סיפור אחד שלם.
                     </p>
 
@@ -517,7 +517,7 @@
             </div>
 
             <!-- בורר קולקציות אינטראקטיבי מעוצב -->
-            <div class="bg-cream-100 rounded-3xl p-8 border border-mocha-200 shadow-sm">
+            <div class="-mt-8 bg-cream-100/95 rounded-3xl p-8 border border-mocha-200 shadow-sm ring-1 ring-mintLeaf/30">
                 <div class="text-center mb-8">
                     <h4 class="text-lg font-bold text-mocha-900 tracking-wider">המשך ישיר ל‑ONE STYLE: בחרו קולקציה וקונספט</h4>
                     <p class="text-xs text-mocha-500 mt-1">לחצו על הקולקציות השונות כדי לצפות בהרמוניה ובפרטי הסטיילינג המוצעים:</p>
@@ -968,8 +968,8 @@
                         <div class="md:col-span-4 order-1 md:order-2">
                             <div id="onestyle-visual" class="onestyle-visual" style="background-image: url('${collectionImages[key][0]}')"></div>
                             <div class="w-28 h-28 rounded-full flex flex-col items-center justify-center p-4 text-center border-4 border-cream-100 shadow-md transition-transform hover:scale-105 mx-auto -mt-14 relative z-10" style="${data.accent}">
-                                <span class="text-xs uppercase tracking-widest text-mocha-950 font-bold">1 STYLE</span>
-                                <span class="text-[9px] text-mocha-800 font-semibold mt-1">אחידות</span>
+                                <span class="text-xs uppercase tracking-widest text-mocha-950 font-bold">${data.title.split(" ")[0]}</span>
+                                <span class="text-[9px] text-mocha-800 font-semibold mt-1">${data.vibes[0]}</span>
                             </div>
                         </div>
                     </div>
